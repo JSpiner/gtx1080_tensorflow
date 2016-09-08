@@ -16,6 +16,7 @@
 성공적으로 설치했으나, [CNN 예제](https://www.tensorflow.org/versions/r0.10/tutorials/mnist/pros/index.html)를 실행할경우 accuracy가 낮게 나온다.
 관련 정보를 검색해보니 파스칼 계열 그래픽카드 에서 CUDA 8.0RC + Cudnn 5.x로 설치해야 정상 동작한다고한다.
 
+---------------------------------------
 
 ## GTX 1080 + Tensorflow v0.10 + Cuda8 + Cudnn5.1 설치 
 #### 설치환경 
@@ -161,15 +162,18 @@ bazel을 이용해 tensorflow 를 빌드시킨다.
 
 만약 pywrap_tensorflow.py를 찾을수 없다고 나온다면 
 
+bashrc에 경로 설정을 잘못했을 가능성이 농후하다.
+
+경로 설정을 다시하고 다시 빌드 해보자.
         
         
 
 ## 참고한 링크
-        - http://tech.marksblogg.com/tensorflow-nvidia-gtx-1080.html
-        - https://marcnu.github.io/2016-08-17/Tensorflow-v0.10-installed-from-scratch-Ubuntu-16.04-CUDA8.0RC-cuDNN5.1-1080GTX/
-        - http://textminingonline.com/dive-into-tensorflow-part-iii-gtx-1080-ubuntu16-04-cuda8-0-cudnn5-0-tensorflow
-        - https://github.com/est-ai/tensorflow-on-pascal
-        - http://stackoverflow.com/questions/38036837/extremly-low-accuracy-in-deep-mnist-for-experts-using-pascal-gpu
+- http://tech.marksblogg.com/tensorflow-nvidia-gtx-1080.html
+- https://marcnu.github.io/2016-08-17/Tensorflow-v0.10-installed-from-scratch-Ubuntu-16.04-CUDA8.0RC-cuDNN5.1-1080GTX/
+- http://textminingonline.com/dive-into-tensorflow-part-iii-gtx-1080-ubuntu16-04-cuda8-0-cudnn5-0-tensorflow
+- https://github.com/est-ai/tensorflow-on-pascal
+- http://stackoverflow.com/questions/38036837/extremly-low-accuracy-in-deep-mnist-for-experts-using-pascal-gpu
 
 
 
