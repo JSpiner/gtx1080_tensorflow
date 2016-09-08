@@ -162,6 +162,14 @@ bazel을 이용해 tensorflow 를 빌드시킨다.
 만약 pywrap_tensorflow.py를 찾을수 없다고 나온다면 
 
         
+        
+
+## 참고한 링크
+        - http://tech.marksblogg.com/tensorflow-nvidia-gtx-1080.html
+        - https://marcnu.github.io/2016-08-17/Tensorflow-v0.10-installed-from-scratch-Ubuntu-16.04-CUDA8.0RC-cuDNN5.1-1080GTX/
+        - http://textminingonline.com/dive-into-tensorflow-part-iii-gtx-1080-ubuntu16-04-cuda8-0-cudnn5-0-tensorflow
+        - https://github.com/est-ai/tensorflow-on-pascal
+        - http://stackoverflow.com/questions/38036837/extremly-low-accuracy-in-deep-mnist-for-experts-using-pascal-gpu
 
 
 
