@@ -117,6 +117,52 @@ bazel과 java 설치
 tensorflow v0.10 다운로드
 
         $ sudo git clone -b r0.10 https://github.com/tensorflow/tensorflow
+        $ cd tensorflow
+
+CROSSTOOL 파일 수정
+third_party/gpus/crosstool/CROSSTOOL 파일을 열어 
+cxx_builtin_include_directory가 있는 라인을 검색후 아래와 같이 추가한다.
+
+        cxx_builtin_include_directory: "/usr/lib/gcc/"
+        cxx_builtin_include_directory: "/usr/local/include"
+        cxx_builtin_include_directory: "/usr/include"
+        cxx_builtin_include_directory: "/usr/local/cuda-8.0/include"
+        tool_path { name: "gcov" path: "/usr/bin/gcov" }
+
+configure 스크립트를 실행한다. GTX 10XX 계열은 compute capability가 6.1이다.
+
+        $ sudo ./configure
         
+        Do you wish to build TensorFlow with Google Cloud Platform support? [y/n] N
+        Do you wish to build TensorFlow with GPU suppport? [y/n] y
+        Please specify with gcc should be used by nvcc as the host compiler.
+        [Default is /usr/bin/gcc]: enter
+        Please specify the Cuda SDK version you want to use, e.g. 7.0. [Leave empty to use system Default]: enter
+        Please specify the location where CUDA toolkit is installed. Refer to README.md for more details. [Default is /usr/local/cuda]: enter
+        Please specify the Cudnn version you wnat to use. [Leave empty to use system default]:enter
+        Please specify the location where cuDNN library is installed. Refer to README.md for more details. [Default is /usr/local/cuda] : enter
+        Please note that each additional compute capability significantly increases your build time and binary size
+        [Default is : "3.5,5.2"] 6.1
+
+bazel을 이용해 tensorflow 를 빌드시킨다.
+
+        $ sudo bazel build -c opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
+        $ sudo bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+        $ sudo pip install /tmp/tensorflow_pkg/tensorflow-0.10.0-py2-none-any.whl
+
+성공적으로 설치됬다면 테스트를 해보자
+
+        $ python
+        > import tensorflow as tf
+        > hello = tf.constant('Hello, world!')
+        > sess = tf.Session()
+        > print(sess.run(hello))
+        Hello, world!
+
+만약 pywrap_tensorflow.py를 찾을수 없다고 나온다면 
+
+        
+
+
 
 
