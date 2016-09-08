@@ -160,12 +160,19 @@ bazel을 이용해 tensorflow 를 빌드시킨다.
         > print(sess.run(hello))
         Hello, world!
 
+## import error : pywrap_tensorflow
 만약 pywrap_tensorflow.py를 찾을수 없다고 나온다면 
 
 bashrc에 경로 설정을 잘못했을 가능성이 농후하다.
 
 경로 설정을 다시하고 다시 빌드 해보자.
         
+## import error : libcudart.so.8.0
+
+        $ source ~/.bashrc
+        $ python
+        > import tensorflow 
+        successfully opend CUDA library libcublas.so locally
         
 
 ## 참고한 링크
