@@ -37,7 +37,7 @@
 그래픽카드를 연결하고 재부팅한다.
 
 #### CUDA 설치
-[CUDA 웹사이트](developer.nvidia.com/cuda-release-candidate-download) 에서 로그인 후 Linux > x86_64 > Ubuntu > 16.04 > runfile(local) 에서 CUDA 8.0과 Patch1을 받는다.
+[NVIDIA 웹사이트](http://developer.nvidia.com/cuda-release-candidate-download) 에서 로그인 후 Linux > x86_64 > Ubuntu > 16.04 > runfile(local) 에서 CUDA 8.0과 Patch1을 받는다.
 
         $ sudo sh cuda_8.0.27_linux.run --override
         
@@ -90,7 +90,7 @@ bashrc를 다시 불러와 경로가 제대로 등록되있나 확인해본다.
 
 #### CUDNN 설치
 
-[CUDA 웹사이트](developer.nvidia.com/cudnn) 에서 로그인 후 cudnn 5.1 버전을 다운받는다.
+[NVIDIA 웹사이트](http://developer.nvidia.com/cudnn) 에서 로그인 후 cudnn 5.1 버전을 다운받는다.
 
         $ sudo tar xvzf cudnn-8.0-linux-x86-v5.1.tgz
         $ cd cuda
