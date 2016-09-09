@@ -72,7 +72,7 @@ CUDA 경로를 등록해준다.
 가장 아래에 다음과같은 명령을 추가한다.
 
         export CUDA_HOME=/usr/local/cuda-8.0
-        export PATH=/usr/local/cuda-8.0/bin${PATH:+:${path}}
+        export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
         export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 bashrc를 다시 불러와 경로가 제대로 등록되있나 확인해본다.
